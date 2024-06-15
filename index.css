@@ -45,14 +45,17 @@ select {
 	font: inherit;
 }
 
-/* remvoe animations for people who've disabled it */
-*,
-*::before,
-*::after {
-	animation-duration: 0.01ms !important;
-	animation-iteration-count: 1 !important;
-	transition-duration: 0.01ms !important;
-	scroll-behavior: auto !important;
+/* remove animations for people who've disabled it */
+@media (prefers-reduced-motion: red uce) {
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
 }
 
 /*                 */
@@ -75,6 +78,8 @@ select {
 	max-width: 80rem;
 }
 
+
+/* Screen Reader accessibility */
 .sr-only {
 	position: absolute;
 	width: 1px;
